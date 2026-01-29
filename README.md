@@ -35,7 +35,7 @@ In this challenge, you will mimic a real-world R&D pipeline, moving from rapid p
 
 ## Accessing Phase 1 of the Challenge with qBraid
 
-<a href="https://account-v2.qbraid.com/?gitHubUrl=https://github.com/iQuHACK/2026-NVIDIA" target="_parent"><img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" alt="Launch On qBraid" width="150"/></a>
+<a href="https://account-v2.qbraid.com/explore/projects/iquhack-nvidia" target="_parent"><img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" alt="Launch On qBraid" width="150"/></a>
 
 During the duration of the hackathon, you will have access to the new and improved version of the qBraid platform accessible through here: https://account-v2.qbraid.com/ 
 
@@ -45,15 +45,15 @@ If any issues occur, try deleting cache in your browser and refreshing the page.
 
 1. Click the `Launch on qBraid` button above <img align="right" width= "33%" src="images/image.png">
 
-2. Navigate to GIT in the left sidebar and clone this repository
+2. Click on the `Launch on qBraid` button on the right side of the explore page. This will automatically clone your repository and add the CUDA-Q environment.
 
-3. Add the CUDA-Q environment by navigating to the ENVS tab in the right sidebar, and click on `+ ADD`
+3. Double check that you have `CUDA-Q (v0.13.0)` installed. If it's not installed follow Steps 4 ~ 6, else go to Step 7.
+   
+4. Add the CUDA-Q environment by navigating to the ENVS tab in the right sidebar, and click on + ADD
 
-4. Navigate to `CUDA-Q and GPU Quantum Environments`
+5. Navigate to `CUDA-Q and GPU Quantum Environments` <img align="right" width ="33%" src="images/image-2.png">
 
-5. Install `CUDA-Q (v0.13.0)` - this will take a few minutes
-
-6. Navigate to `CUDA-Q and GPU Quantum Environments` <img align="right" width ="33%" src="images/image-2.png">
+6. Install CUDA-Q (v0.13.0)
 
 7. Once installation is complete, open the `labs_tutorial.ipynb` notebook
 
@@ -135,6 +135,7 @@ For any questions or additional assistance using Brev, see the [Brev documentati
 
 ## Accessing Material Post Challenge
 
-Challenge materials can be accessed via https://account-v2.qbraid.com/ or through https://account.qbraid.com/ once v2 is merged into the main platform.
+Challenge materials can be accessed via https://account-v2.qbraid.com/ or in the coming weeks through https://account.qbraid.com/ once v2 is merged into the main platform.
+Make sure to push your changes on qBraid to your respective repository forks as a backup.
 
 If you completed Phase 2 of the challenge, materials can be accessed via https://brev.nvidia.com/.
