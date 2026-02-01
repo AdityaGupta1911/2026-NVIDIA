@@ -1,19 +1,42 @@
-> **Note to Students:** > The questions and examples provided in the specific sections below are **prompts to guide your thinking**, not a rigid checklist. 
-> * **Adaptability:** If a specific question doesn't fit your strategy, you may skip or adapt it.
-> * **Depth:** You are encouraged to go beyond these examples. If there are other critical technical details relevant to your specific approach, please include them.
-> * **Goal:** The objective is to convince the reader that you have employed AI agents in a thoughtful way.
-
-**Required Sections:**
-
-1. **The Workflow:** How did you organize your AI agents? (e.g., "We used a Cursor agent for coding and a separate ChatGPT instance for documentation").
-2. **Verification Strategy:** How did you validate code created by AI?
-* *Requirement:* You must describe specific **Unit Tests** you wrote to catch AI hallucinations or logic errors.
 
 
-3. **The "Vibe" Log:**
-* *Win:* One instance where AI saved you hours.
-* *Learn:* One instance where you altered your prompting strategy (provided context, created a skills.md file, etc) to get better results from your interaction with the AI agent.
-* *Fail:* One instance where AI failed/hallucinated, and how you fixed it.
-* *Context Dump:* Share any prompts, `skills.md` files, MCP etc. that demonstrate thoughtful prompting.
+[AI_REPORT.md](https://github.com/user-attachments/files/24991080/AI_REPORT.md)
+# AI Collaboration Report  
+**LABS N = 40 — Solver Milestone 4**  
+*NVIDIA iQuHACK 2026*
 
+---
+
+## 1. Human–AI Collaboration Workflow
+
+Our project leveraged a **multi-agent AI strategy** to navigate the hardware constraints of the NVIDIA L4 GPU.
+
+- **Gemini (Chief Architect)**  
+  Responsible for system-level environment stabilization, resolving version conflicts (NumPy 1.x vs 2.x), and high-level hybrid architecture design.
+
+- **DeepSeek (Logic Refiner)**  
+  Utilized for granular optimization of the CuPy-based energy functions and refinement of the Tabu Search heuristics.
+
+- **Human Lead (Strategy & Validation)**  
+  Directed the pivot from pure state-vector simulation to a **hybrid variational seeding model** when physical memory limits were reached.
+
+---
+
+## 2. Verification Strategy
+
+To ensure the integrity of AI-assisted code, we implemented a **multi-stage verification pipeline**.
+
+### A. Environment Unit Tests
+
+Before execution, we verified GPU linkage to prevent runtime crashes:
+
+```python
+# Verification of CUDA Runtime Compiler (NVRTC)
+try:
+    import cupy as cp
+    test_array = cp.array([1, 2, 3])
+    test_copy = test_array.copy()  # Triggers NVRTC JIT
+    print("✅ GPU Linkage Verified")
+except Exception as e:
+    print(f"❌ Verification Failed: {e}")
 
